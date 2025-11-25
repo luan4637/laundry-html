@@ -50,3 +50,17 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .home-page {
+        .intro {
+            h1 {
+                font-size: 20vw;
+            }
+
+            h2 {
+                font-size: 5vw;
+            }
+        }
+    }
+}

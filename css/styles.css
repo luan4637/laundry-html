@@ -65,15 +65,26 @@ main {
   }
 }
 header .header-inner {
+  position: relative;
   display: flex;
   align-items: center;
 }
 header .logo img {
   height: 2em;
 }
+header .navicon {
+  display: none;
+  font-size: 1.7em;
+}
+header .navicon + input[type=checkbox] {
+  display: none;
+}
 header menu {
   flex: 3;
   margin-left: 2em;
+}
+header menu.mobile {
+  display: none;
 }
 header form {
   justify-self: flex-end;
@@ -105,6 +116,25 @@ header form button {
   cursor: pointer;
 }
 
+@media screen and (max-width: 600px) {
+  header .header-inner {
+    justify-content: space-between;
+  }
+  header .header-inner .navicon {
+    display: block;
+  }
+  header .header-inner menu.desktop {
+    display: none;
+  }
+  header .header-inner menu.mobile {
+    display: block;
+    right: -100%;
+    transition: right 0.3s;
+  }
+  header .header-inner input[type=checkbox]:checked + menu.mobile {
+    right: 0;
+  }
+}
 footer .footer-inner {
   display: flex;
   align-items: center;
@@ -155,24 +185,47 @@ footer .socials {
     width: 15em;
   }
 }
-menu {
+menu.desktop {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-menu li {
+menu.desktop li {
   display: inline-block;
   margin-left: 3em;
 }
-menu li a {
+menu.desktop li a {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1em;
   color: #000;
 }
-menu li a:hover {
+menu.desktop li a:hover {
   color: #00ad3e;
+}
+menu.mobile {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  width: 10em;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+menu.mobile li {
+  border-bottom: 1px solid #000;
+}
+menu.mobile li:last-child {
+  border-bottom: 0;
+}
+menu.mobile li a {
+  display: block;
+  padding: 0.4em 0.5em;
+  text-decoration: none;
+  color: #000;
 }
 
 .socials {
@@ -277,6 +330,14 @@ menu li a:hover {
   color: #fff;
 }
 
+@media screen and (max-width: 600px) {
+  .home-page .intro h1 {
+    font-size: 20vw;
+  }
+  .home-page .intro h2 {
+    font-size: 5vw;
+  }
+}
 .address-page {
   flex-wrap: wrap;
 }

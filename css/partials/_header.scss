@@ -1,5 +1,6 @@
 header {
     .header-inner {
+        position: relative;
         display: flex;
         align-items: center;
     }
@@ -10,9 +11,22 @@ header {
         }
     }
 
+    .navicon {
+        display: none;
+        font-size: 1.7em;
+
+        + input[type=checkbox] {
+            display: none;
+        }
+    }
+
     menu {
         flex: 3;
         margin-left: 2em;
+
+        &.mobile {
+            display: none;
+        }
     }
 
     form {
@@ -46,6 +60,34 @@ header {
             border: 0;
             font-size: 1em;
             cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        .header-inner {
+            justify-content: space-between;
+
+            .navicon {
+                display: block;
+            }
+
+            menu {
+                &.desktop {
+                    display: none;
+                }
+
+                &.mobile {
+                    display: block;
+                    right: -100%;
+                    transition: right 0.3s;
+                }
+            }
+
+            input[type=checkbox]:checked + menu.mobile {
+                right: 0;
+            }
         }
     }
 }
