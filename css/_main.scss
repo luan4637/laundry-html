@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.5vw;
+    font-weight: normal;
+    color: #000;
+}
+* {
+    box-sizing: border-box;
+}
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 0;
+    background-image: url('../images/bg-grid.png');
+    background-repeat: repeat;
+    background-size: 70%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    main {
+        flex: 10;
+
+        .container, .main-content {
+            height: 100%;
+        }
+
+        .main-content {
+            display: flex;
+
+            .content-left {
+                flex: 12;
+            }
+
+            .content-right {
+                flex: 5;
+            }
+        }
+    }
+}
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 60em;
+
+    &.full-width {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+main {
+    padding-top: 2em;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .wrapper {
+        main {
+            .main-content {
+                flex-direction: column;
+
+                .content-right {
+                    margin-top: 2em;
+                }
+            }
+        }
+    }
+}

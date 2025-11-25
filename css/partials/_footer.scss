@@ -1,0 +1,61 @@
+footer {
+    .footer-inner {
+        display: flex;
+        align-items: center;
+    }
+
+    .open-time {
+        padding-right: 2em;
+        align-self: flex-start;
+
+        span, p {
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        span {
+            display: block;
+            
+            color: #00ad3e;
+        }
+
+        p {
+            margin: 0;
+            background-color: #42e2e6;
+            color: #fff;
+        }
+    }
+
+    .content-text {
+        width: 15em;
+        font-size: 0.8em;
+        line-height: 1.2;
+        color: #00ad3e;
+    }
+
+    .socials {
+        flex: 5;
+        align-self: flex-end;
+        text-align: right;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    footer {
+        margin-top: 1.5em;
+        .footer-inner {
+            flex-direction: column;
+        }
+
+        .open-time, .content-text, .socials {
+            align-self: center;
+            margin: 0.5em 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .open-time {
+            width: 15em;
+        }
+    }
+}

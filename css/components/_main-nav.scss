@@ -1,0 +1,22 @@
+menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: inline-block;
+        margin-left: 3em;
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1em;
+            color: #000;
+
+            &:hover {
+                color: #00ad3e;
+            }
+        }
+    }
+}
